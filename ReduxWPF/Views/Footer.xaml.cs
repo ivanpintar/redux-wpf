@@ -1,4 +1,5 @@
-﻿using ReduxWPF.States;
+﻿using ReduxWPF.Actions;
+using ReduxWPF.States;
 using System;
 using System.Linq;
 using System.Reactive.Linq;
@@ -59,10 +60,7 @@ namespace ReduxWPF.Views
 
         private void FilterTodos(TodosFilter filter)
         {
-            App.Store.Dispatch(new FilterTodosAction
-            {
-                Filter = filter
-            });
+            App.Store.Dispatch(App.Actions.Filter(filter));
         }
 
     }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Projects\Misc\redux-wpf\ReduxWPF\obj\Debug\
+D:\Projects\redux-wpf\ReduxWPF\obj\Debug\
 ReduxWPF
 none
 false
 DEBUG;TRACE
-D:\Projects\Misc\redux-wpf\ReduxWPF\App.xaml
+D:\Projects\redux-wpf\ReduxWPF\App.xaml
 5518692494
 
-20244071473
-70581489335
+20491296978
+76379792383
 MainWindow.xaml;Views\Footer.xaml;Views\Header.xaml;Views\MainSection.xaml;Views\TodoItem.xaml;
 
 False

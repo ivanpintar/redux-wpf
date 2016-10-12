@@ -1,0 +1,13 @@
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\ReduxWPF.Data.dll.config
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\ReduxWPF.Data.dll
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\ReduxWPF.Data.pdb
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\EntityFramework.dll
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\EntityFramework.xml
+D:\Projects\redux-wpf\ReduxWPF.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\redux-wpf\ReduxWPF.Data\obj\Debug\ReduxWPF.Data.csprojResolveAssemblyReference.cache
+D:\Projects\redux-wpf\ReduxWPF.Data\obj\Debug\ReduxWPF.Data.dll
+D:\Projects\redux-wpf\ReduxWPF.Data\obj\Debug\ReduxWPF.Data.pdb
+D:\Projects\redux-wpf\ReduxWPF.Data\obj\Debug\ReduxWPF.Data.Migrations.Base.resources
+D:\Projects\redux-wpf\ReduxWPF.Data\obj\Debug\ReduxWPF.Data.csproj.GenerateResource.Cache
+D:\Projects\redux-wpf\ReduxWPF.Data\obj\Debug\ReduxWPF.Data.Migrations.AddedDateToTodo.resources

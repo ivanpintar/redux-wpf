@@ -10,7 +10,7 @@
             x:Name="TodosItemsControl">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <local:TodoItem Todo="{Binding }"/>
+                    <local:TodoItem Todo="{Binding }"/> 
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

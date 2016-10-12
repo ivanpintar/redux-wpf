@@ -1,7 +1,10 @@
 ﻿using Redux;
+using ReduxWPF.Actions;
+using ReduxWPF.Data;
 using ReduxWPF.States;
 using System.Collections.Immutable;
 using System.Windows;
+using Taiste.Redux;
 
 namespace ReduxWPF
 {
@@ -11,6 +14,8 @@ namespace ReduxWPF
     public partial class App : Application
     {
         public static IStore<AppState> Store { get; private set; }
+
+        public static ActionCreator Actions = new ActionCreator(new TodoRepository());
 
         public App()
         {
@@ -22,7 +27,9 @@ namespace ReduxWPF
                 Filter = TodosFilter.All
             };
 
-            Store = new Store<AppState>(Reducers.ReduceApplication, initialState);
+            Store = new Store<AppState>(Reducers.ReduceApplication, initialState, Middleware.ThunkMiddleware);
+
+            Store.Dispatch(Actions.ReloadTodos());
         }
     }
 }

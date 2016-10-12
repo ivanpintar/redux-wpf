@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxWPF", "ReduxWPF\ReduxWPF.csproj", "{ED92C4AA-7ED5-47A5-8CD6-CC3EBB7B1066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxWPF.Data", "ReduxWPF.Data\ReduxWPF.Data.csproj", "{DFD709BA-F65C-4CF8-BF1C-8E1F8EDC5896}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ED92C4AA-7ED5-47A5-8CD6-CC3EBB7B1066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED92C4AA-7ED5-47A5-8CD6-CC3EBB7B1066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED92C4AA-7ED5-47A5-8CD6-CC3EBB7B1066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD709BA-F65C-4CF8-BF1C-8E1F8EDC5896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD709BA-F65C-4CF8-BF1C-8E1F8EDC5896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD709BA-F65C-4CF8-BF1C-8E1F8EDC5896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD709BA-F65C-4CF8-BF1C-8E1F8EDC5896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

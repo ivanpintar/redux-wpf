@@ -18,6 +18,7 @@
 
         <TextBlock 
             x:Name="TodoItemTextBlock"
+            Text="{Binding Text}"
             Grid.Column="1"/>
 
         <Button
