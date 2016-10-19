@@ -46,6 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-bin
-packages
-obj
+bin/
+packages/
+obj/
