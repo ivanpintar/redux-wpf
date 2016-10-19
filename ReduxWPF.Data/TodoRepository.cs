@@ -9,51 +9,63 @@ namespace ReduxWPF.Data
 {
     public class TodoRepository : ITodoRepository
     {
-        public IEnumerable<Todo> Load()
+        public async Task<IEnumerable<Todo>> Load()
         {
-            using (var ctx = new TodoContext())
+            return await Task.Run(() =>
             {
-                var todos = ctx.Todos.ToList();
-                return todos;
-            }
+                using (var ctx = new TodoContext())
+                {
+                    var todos = ctx.Todos.ToList();
+                    return todos;
+                }
+            });
         }
 
-        public Todo AddTodo(Todo todo)
+        public async Task<Todo> AddTodo(Todo todo)
         {
-            using (var ctx = new TodoContext())
+            return await Task.Run(() =>
             {
-                todo.Text = todo.Text.ToUpper();
-                ctx.Todos.Add(todo);
-                ctx.SaveChanges();
+                using (var ctx = new TodoContext())
+                {
+                    todo.Text = todo.Text.ToUpper();
+                    ctx.Todos.Add(todo);
+                    ctx.SaveChanges();
 
-                return todo;
-            }
+                    return todo;
+                }
+            });
         }
 
-        public Todo UpdateTodo(Todo todo)
+        public async Task<Todo> UpdateTodo(Todo todo)
         {
-            using (var ctx = new TodoContext())
+            return await Task.Run(() =>
             {
-                var toUpdate = ctx.Todos.Single(x => x.Id == todo.Id);
-                toUpdate.IsCompleted = todo.IsCompleted;
+                using (var ctx = new TodoContext())
+                {
+                    var toUpdate = ctx.Todos.Single(x => x.Id == todo.Id);
+                    toUpdate.IsCompleted = todo.IsCompleted;
 
-                ctx.SaveChanges();
+                    ctx.SaveChanges();
 
-                return toUpdate;
-            }
+                    return toUpdate;
+                }
+            });
         }
 
-        public bool DeleteTodo(Guid id)
+        public async Task<bool> DeleteTodo(Guid id)
         {
-            using (var ctx = new TodoContext())
+            return await Task.Run(() =>
             {
-                var toDelete = ctx.Todos.Single(x => x.Id == id);
-                ctx.Todos.Remove(toDelete);
+                using (var ctx = new TodoContext())
+                {
+                    var toDelete = ctx.Todos.Single(x => x.Id == id);
+                    ctx.Todos.Remove(toDelete);
 
-                ctx.SaveChanges();
+                    ctx.SaveChanges();
 
-                return true;
-            }
+                    return true;
+                }
+            });
         }
 
     }

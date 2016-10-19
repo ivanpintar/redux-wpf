@@ -7,9 +7,9 @@ namespace ReduxWPF.Data
 {
     public interface ITodoRepository
     {
-        IEnumerable<Todo> Load();
-        Todo AddTodo(Todo todo);
-        bool DeleteTodo(Guid id);
-        Todo UpdateTodo(Todo todo);
+        Task<IEnumerable<Todo>> Load();
+        Task<Todo> AddTodo(Todo todo);
+        Task<bool> DeleteTodo(Guid id);
+        Task<Todo> UpdateTodo(Todo todo);
     }
 }

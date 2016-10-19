@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using Taiste.Redux;
 
 namespace ReduxWPF.Actions
@@ -47,35 +48,39 @@ namespace ReduxWPF.Actions
 
         public IAction ReloadTodos()
         {
-            return new ThunkAction<AppState>((dispatch, getState) =>
+            return new ThunkAction<AppState>(async (dispatch, getState) =>
             {
-                var entities = _repo.Load().OrderByDescending(x => x.Date);
-                var todos = entities.Select(x => new Todo { Id = x.Id, Text = x.Text, IsCompleted = x.IsCompleted }).ToList();
+                var entities = await _repo.Load();
+                var todos = entities
+                    .OrderByDescending(x => x.Date)
+                    .Select(x => new Todo { Id = x.Id, Text = x.Text, IsCompleted = x.IsCompleted })
+                    .ToList();
+
                 dispatch(new ReloadTodosAction { Todos = todos });
             });
         }
 
         public IAction AddTodo(string text)
         {
-            return new ThunkAction<AppState>((dispatch, getState) =>
+            return new ThunkAction<AppState>(async (dispatch, getState) =>
             {
-                var addedTodo = _repo.AddTodo(new Data.Entities.Todo { Text = text });
+                var addedTodo = await _repo.AddTodo(new Data.Entities.Todo { Text = text });
                 dispatch(new AddTodoAction { Text = addedTodo.Text });
             });
         }
 
         public IAction DeleteTodo(Guid id)
         {
-            return new ThunkAction<AppState>((dispatch, getState) =>
+            return new ThunkAction<AppState>(async (dispatch, getState) =>
             {
-                _repo.DeleteTodo(id);
+                await _repo.DeleteTodo(id);
                 dispatch(new DeleteTodoAction { TodoId = id });
             });
         }
 
         public IAction ToggleTodo(Guid id)
         {
-            return new ThunkAction<AppState>((dispatch, getState) =>
+            return new ThunkAction<AppState>(async (dispatch, getState) =>
             {
                 var todo = getState().Todos.Single(x => x.Id == id);
                 var entity = new Data.Entities.Todo
@@ -84,7 +89,7 @@ namespace ReduxWPF.Actions
                     Text = todo.Text,
                     IsCompleted = !todo.IsCompleted
                 };
-                var updated = _repo.UpdateTodo(entity);
+                var updated = await _repo.UpdateTodo(entity);
 
                 dispatch(new ToggleTodoAction { TodoId = id, IsCompleted = updated.IsCompleted });
             });
@@ -94,5 +99,6 @@ namespace ReduxWPF.Actions
         {
             return new FilterTodosAction { Filter = filter };
         }
+
     }
 }
