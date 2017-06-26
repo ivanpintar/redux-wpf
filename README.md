@@ -1,3 +1,3 @@
 # redux-wpf
 
-Trying out Redux.Net for wpg
+Trying out Redux.Net for wpf
